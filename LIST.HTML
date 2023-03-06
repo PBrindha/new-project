@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> list sample</title> 
+        <link rel="stylesheet" href="css/styles.css" type=""text/css>
+    </head>
+    <body>
+        <ul>
+            <li>HELLO</li>
+            <li>WORLD</li>
+        </ul>
+        <h1 id="demo">Mouse over me</h1>
+        <button id="myBtn">Try it</button>
+        <script>
+            document.getElementById("myBtn").addEventListener("click", displayDate);
+            document.getElementById("demo").onmouseover = function() {mouseOver()};
+            document.getElementById("demo").onmouseout = function() {mouseOut()};
+            function displayDate() {
+  document.getElementById("demo").innerHTML = Date();
+}
+
+            function mouseOver() {
+              document.getElementById("demo").style.color = "red";
+            }
+            
+            function mouseOut() {
+              document.getElementById("demo").style.color = "yellow";
+            }
+            </script>
+            
+            
+            
+    </body>
+
+</html>
+
+
