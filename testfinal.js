@@ -15,14 +15,14 @@ function addItem(e){
 
   // Get input value
   var newItem = document.getElementById('item').value;
-
+var newDes =document.getElementById('description').value;
   // Create new li element
   var li = document.createElement('li');
   // Add class
   li.className = 'list-group-item';
   // Add text node with input value
   li.appendChild(document.createTextNode(newItem));
-
+li.appendChild(document.createTextNode(newDes));
   // Create del button element
   var deleteBtn = document.createElement('button');
 
@@ -64,4 +64,14 @@ function filterItems(e){
       item.style.display = 'none';
     }
   });
-}
+
+    Array.from(items).forEach(function(description){
+        var itemName = description.textContent;
+        if(itemName.toLowerCase().indexOf(text) != -1){
+          description.style.display = 'block';
+        } else {
+          description.style.display = 'none';
+        }
+        });
+
+    }
